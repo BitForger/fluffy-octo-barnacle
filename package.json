@@ -1,14 +1,16 @@
 {
-  "name": "bitforgers-new",
-  "version": "0.0.0",
+  "name": "bitforgers-space",
+  "version": "1.0.2",
+  "license": "All Rights Reserved",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run server",
+    "config": "ts-node ./set-env/set-env.ts",
+    "server": "ng serve",
+    "build": "npm run config -- --environment=prod && ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "node ./ng-add-pug-loader.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
