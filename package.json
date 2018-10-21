@@ -53,6 +53,6 @@
     "typescript": "~2.9.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.8.0",
+    "@angular-devkit/build-angular": "~0.8.0"
   }
 }
