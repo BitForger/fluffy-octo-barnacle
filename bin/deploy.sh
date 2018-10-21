@@ -20,7 +20,7 @@ export AWS_DEFAULT_REGION="us-east-1"
 git config --global user.email "kovacsn66@gmail.com"
 git config --global user.name "Noah CI"
 
-npm version patch
+#npm version patch
 
 # exit on any error
 set -e
