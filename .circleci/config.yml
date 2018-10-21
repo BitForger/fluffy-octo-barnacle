@@ -26,7 +26,7 @@ jobs:
 
       - run:
           name: Setup Pug Compiler
-          command: ng add ng-cli-pug-loader
+          command: node ../ng-add-pug-loader.js
 
       - run:
           name: Build
