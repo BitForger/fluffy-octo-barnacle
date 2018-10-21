@@ -41,7 +41,7 @@ else
   branch=`echo "$GIT_BRANCH" | awk -F/ '{ print $NF }'`
 fi
 # determine environment and cluster to deploy to, based on the current branch
-cluster="Web-Apps"
+cluster="Production"
 if [ "$branch" = "production" ]; then
   env="production"
 elif [ "$branch" = "beta" ]; then
