@@ -1,4 +1,7 @@
-mat-toolbar(color="primary" role="header")
-  mat-toolbar-row
-    a(mat-button routerLink="/") Bitforger's Space
-    a(mat-button routerLink="/about") About
+nav.navbar.navbar-expand-lg.navbar-light(role="header", [ngClass]="{hidden: hideToolbar, invert: invert}" )
+  a.navbar-brand(routerLink="/" routerLinkActive="active" ) Polar Bear Digital
+  a.navbar-toggler(type="button")
+    i.fal.fa-bars
+  .collapse.navbar-collapse
+    .navbar-nav
+      a.nav-item.nav-link(routerLink="/about" routerLinkActive="active" ) About

@@ -1,4 +1,7 @@
-app-header
 
-.container-fluid
-  app-main
+mat-sidenav-container
+  mat-sidenav
+
+  mat-sidenav-content
+    app-header(*ngIf="shouldHeaderBeVisible")
+    app-main

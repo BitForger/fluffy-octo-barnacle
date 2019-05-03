@@ -1,5 +1,24 @@
-.row
-  .col
-    mat-card
-      mat-card-content
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec,
+.content-divs([ngSwitch]="activeDiv", *ngIf="homeSplashActive")
+  .content-div(*ngSwitchCase="'div1'", [@visibleHidden]="'visible'")
+    h2 Oh! Hello there!
+  .content-div(*ngSwitchCase="'div2'", [@visibleHidden]="'visible'")
+    h2 You've found my site
+  .content-div(*ngSwitchCase="'div3'", [@visibleHidden]="'visible'")
+    h2 It's not much, but I hope you find what you're looking for
+  .content-div(*ngSwitchCase="'div4'", [@visibleHidden]="'visible'")
+    h2 My name is Noah Kovacs, and without further ado...
+.main-content()
+  .main-jumbo(*ngIf="!homeSplashActive")
+    .row.background-row
+      .col.content-col
+        .row([@mainJumbo]="'visible'")
+          .col
+            h1() Polar Bear Digital
+        .row.justify-content-center
+          .col.col-sm-6
+            mat-card
+              mat-card-title Hello
+              mat-card-content
+              p This site is a little bit under construction right now but thanks for visiting.
+              p I work on a bunch of different projects ranging from electron based desktop applications to ruby web applications.
+

@@ -1,14 +1,16 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule }             from '@angular/core';
 
-import { AppComponent }                      from './app.component';
-import { HeaderComponent }                   from './components/header/header.component';
-import { BrowserAnimationsModule }           from '@angular/platform-browser/animations';
-import { RoutingModule }                     from './routing/routing.module';
-import { MainComponent }                     from './components/main/main.component';
-import { HomeComponent }                     from './components/routes/home/home.component';
-import { AboutComponent }                    from './components/routes/about/about.component';
-import { MaterialModule }                    from './material.module';
+import { AppComponent }            from './app.component';
+import { HeaderComponent }         from './components/header/header.component';
+import { BrowserAnimationsModule }     from '@angular/platform-browser/animations';
+import { RoutingModule }               from './routing/routing.module';
+import { MainComponent }               from './components/main/main.component';
+import { HomeComponent }               from './components/routes/home/home.component';
+import { AboutComponent }              from './components/routes/about/about.component';
+import { MaterialModule }              from './material.module';
+import { MatSidenavModule }            from '@angular/material';
+import { CookieModule, CookieService } from 'ngx-cookie';
 
 @NgModule({
   declarations: [
@@ -16,17 +18,20 @@ import { MaterialModule }                    from './material.module';
     HeaderComponent,
     MainComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
   ],
-  imports: [
+  imports     : [
     BrowserModule,
     BrowserAnimationsModule,
     RoutingModule,
     MaterialModule,
+    MatSidenavModule,
+    CookieModule.forRoot(),
   ],
-  providers: [
-    Title
+  providers   : [
+    Title,
   ],
-  bootstrap: [AppComponent]
+  bootstrap   : [ AppComponent ],
 })
-export class AppModule { }
+export class AppModule {
+}
