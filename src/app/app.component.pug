@@ -3,5 +3,6 @@ mat-sidenav-container
   mat-sidenav
 
   mat-sidenav-content
-    app-header(*ngIf="shouldHeaderBeVisible")
+    app-header([loading]="loading", [hideToolbar]="hideToolbar", [invert]="invert", [homeActive]="homeActive")
     app-main
+    app-footer

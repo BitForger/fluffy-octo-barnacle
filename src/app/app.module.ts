@@ -11,6 +11,10 @@ import { AboutComponent }              from './components/routes/about/about.com
 import { MaterialModule }              from './material.module';
 import { MatSidenavModule }            from '@angular/material';
 import { CookieModule, CookieService } from 'ngx-cookie';
+import { ProjectsComponent } from './components/routes/projects/projects.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,8 @@ import { CookieModule, CookieService } from 'ngx-cookie';
     MainComponent,
     HomeComponent,
     AboutComponent,
+    ProjectsComponent,
+    FooterComponent,
   ],
   imports     : [
     BrowserModule,
@@ -27,6 +33,8 @@ import { CookieModule, CookieService } from 'ngx-cookie';
     MaterialModule,
     MatSidenavModule,
     CookieModule.forRoot(),
+    GraphQLModule,
+    HttpClientModule,
   ],
   providers   : [
     Title,

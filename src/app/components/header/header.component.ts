@@ -1,6 +1,6 @@
-import { Component, Input, OnInit }     from '@angular/core';
-import { HomeService }                  from '../../services/home/home.service';
-import { Event, NavigationEnd, Router } from '@angular/router';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { HomeService }                                                                  from '../../services/home/home.service';
+import { Event, NavigationEnd, Router }                                                 from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,26 +11,23 @@ import { Event, NavigationEnd, Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   @Input()
-  hideToolbar = true;
+  public hideToolbar = true;
 
-  @Input() nav: any;
+  @Input()
+  public invert = false;
 
-  invert = false;
+  @Input()
+  public loading = true;
 
-  constructor(private homeService: HomeService, private router: Router) {
+  @Input()
+  public homeActive;
+
+  constructor() {
   }
 
   ngOnInit() {
-    setTimeout(() => this.hideToolbar = false, 500);
-    if ( this.router.url !== '/' ) {
-      this.hideToolbar = false;
-    }
-
-    this.router.events.subscribe((evt: Event) => {
-      if ( evt instanceof NavigationEnd) {
-        this.invert = (evt.url !== '/');
-      }
-    });
+    console.log('init', this.hideToolbar);
+    console.log('invert', this.invert);
   }
 
 }

@@ -1,0 +1,64 @@
+.project-row {
+
+  &.project-row-rails {
+    background-color: #cc0300;
+    color: #fff;
+  }
+
+  .logo {
+    background: linear-gradient(to left, rgba(204, 3, 0, 1), rgba(0, 0, 0, 0));
+    background: #cc0300 url("/assets/images/rails-logo.png") right -170px no-repeat;
+    min-height: 200px;
+  }
+}
+
+mat-card {
+
+  @media(max-width: 425px) {
+    margin-bottom: 20px;
+  }
+
+  @media(max-width: 768px) {
+    min-height: 310px;
+  }
+
+  @media(min-width: 1024px) {
+    min-height: 380px;
+  }
+
+  .mat-card-title {
+    text-align: center;
+
+    @media(max-width: 1024px) {
+      min-height: 110px;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .mat-card-image {
+
+    @media(min-width: 1600px) {
+      max-height: 334.64px;
+    }
+
+    @media(max-width: 1600px) {
+      max-height: 248px;
+    }
+  }
+
+  .mat-card-content {
+
+    @media (min-width: 1024px) {
+      min-height: 48px;
+    }
+  }
+}
+
+.reg-repos {
+  .col {
+  }
+}

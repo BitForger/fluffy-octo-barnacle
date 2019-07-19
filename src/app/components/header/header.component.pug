@@ -1,7 +1,8 @@
+mat-progress-bar(*ngIf="loading" mode="indeterminate" color="warn")
 nav.navbar.navbar-expand-lg.navbar-light(role="header", [ngClass]="{hidden: hideToolbar, invert: invert}" )
-  a.navbar-brand(routerLink="/" routerLinkActive="active" ) Polar Bear Digital
+  a.navbar-brand(routerLink="/", [ngClass]="{'active': homeActive}" ) Polar Bear Digital
   a.navbar-toggler(type="button")
     i.fal.fa-bars
   .collapse.navbar-collapse
     .navbar-nav
-      a.nav-item.nav-link(routerLink="/about" routerLinkActive="active" ) About
+      a.nav-item.nav-link(routerLink="/projects" routerLinkActive="active" ) Projects

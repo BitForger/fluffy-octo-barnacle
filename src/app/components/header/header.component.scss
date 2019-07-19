@@ -35,5 +35,61 @@ nav.navbar {
       color: white;
     }
   }
+
+  .navbar-brand, .nav-link {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    &:before {
+      content: '[';
+      opacity: 0;
+      transform: translateX(-5px);
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+    }
+
+    &:after {
+      content: ']';
+      opacity: 0;
+      transform: translateX(5px);
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+    }
+
+    &.active {
+      &:before {
+        content: '[';
+        opacity: 1;
+      }
+
+      &:after {
+        content: ']';
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      &:before {
+        content: '[';
+        transform: translateX(0px);
+        opacity: 1;
+      }
+
+      &:after {
+        content: ']';
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
 }
 

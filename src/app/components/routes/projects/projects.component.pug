@@ -1,0 +1,31 @@
+.row(*ngIf="!loading" )
+  .col.pl-0.pr-0
+    h2.text-center Pinned Repos (Repo's I have the most fun with)
+    .row.mb-2(*ngFor="let row of pinnedRepos")
+      .col-sm-12.col-md-4.col-lg-4(*ngFor="let project of row; index as i")
+        mat-card
+          mat-card-title
+            a(href="{{project.url}}") {{project.name}}
+          img(mat-card-image, [src]="getImage(project.primaryLanguage.name)")
+          mat-card-content
+            p {{project.description}}
+    .row
+      .col-12
+        h2.text-center.mb-md-4.mt-md-4 My other projects
+    .row.mb-2.reg-repos
+      .col-sm-12.col-md-3.mb-2(*ngFor="let p of repos; index as k" )
+        mat-card
+          mat-card-title
+            a([href]="p.url" ) {{p.name}}
+          img(mat-card-image, [src]="getImage(p.primaryLanguage.name)")
+          mat-card-content
+            p {{p.description}}
+    //.project-row.project-row-rails.row
+    //  .col-7
+    //    h2 studious-computing-machine
+    //    p This is a rails playground I've been using to learn on, it contains mostly work using rails with the AWS SDK
+    //  .col-5.logo
+  //.col
+  //  p col 2
+  //.col
+  //  p col 3

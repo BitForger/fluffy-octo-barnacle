@@ -12,7 +12,8 @@ const envConfigFile = `
 export const environment = {
   production: ${isProd},
   accessKeyId: '${process.env.ACCESS_KEY_ID}',
-  secretAccessKey: '${process.env.SECRET_ACCESS_KEY}'
+  secretAccessKey: '${process.env.SECRET_ACCESS_KEY}',
+  githubToken: '${process.env.GITHUB_TOKEN}'
 };`;
 
 writeFile(targetPath, envConfigFile, function ( err ) {
