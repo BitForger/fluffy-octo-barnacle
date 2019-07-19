@@ -10,7 +10,7 @@ export function createApollo(httpLink: HttpLink) {
   const authLink = new ApolloLink((operation, forward) => {
     operation.setContext({
       headers: {
-        Authorization: `bearer ${environment.githubToken}`
+        Authorization: `bearer ${process.env.GITHUB_TOKEN}`
       }
     });
     return forward(operation);
