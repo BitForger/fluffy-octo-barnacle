@@ -28,7 +28,14 @@ export class AppComponent implements AfterViewChecked {
               private changeDetectorRef: ChangeDetectorRef,
               private cs: CookieService) {
 
-    const splashWasViewed = this.cs.get('splashComplete') as unknown as boolean;
+    let splashWasViewed = this.cs.get('splashComplete') as unknown as boolean;
+    if (!splashWasViewed) {
+      const observer = this.homeService.toggle$.subscribe(() => {
+        splashWasViewed = this.cs.get('splashComplete') as unknown as boolean;
+        this.hideToolbar = !splashWasViewed;
+        observer.unsubscribe();
+      });
+    }
     this.router.events.subscribe((evt: Event) => {
       if ( evt instanceof NavigationEnd) {
         this.invert = (evt.url !== '/');
