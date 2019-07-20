@@ -75,7 +75,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     }).valueChanges
       .subscribe(({data, loading}) => {
         this.loading = loading;
-        console.log(data);
         const pinnedRepoIds = data.user.pinnedRepositories.nodes.map(repo => repo.id);
         const pinnedRepoLength = data.user.pinnedRepositories.nodes.length;
         const pinnedFirstHalf = data.user.pinnedRepositories.nodes.slice(0, pinnedRepoLength / 2);
@@ -84,7 +83,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
           pinnedFirstHalf,
           pinnedLastHalf,
         ];
-        console.log('pinned repos', this.pinnedRepos);
         this.repos = data.user.repositories.nodes;
         this.repos = this.repos.filter(r => !pinnedRepoIds.includes(r.id));
       });

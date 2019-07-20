@@ -26,8 +26,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('init', this.hideToolbar);
-    console.log('invert', this.invert);
   }
 
 }
