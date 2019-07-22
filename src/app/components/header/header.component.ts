@@ -1,6 +1,6 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { HomeService }                                                                  from '../../services/home/home.service';
-import { Event, NavigationEnd, Router }                                                 from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { HomeService }              from '../../services/home/home.service';
+import { HeaderService }            from '../../services/header/header.service';
 
 @Component({
   selector: 'app-header',
@@ -22,10 +22,13 @@ export class HeaderComponent implements OnInit {
   @Input()
   public homeActive;
 
-  constructor() {
+  constructor(private headerService: HeaderService) {
   }
 
   ngOnInit() {
+    this.headerService.isLoading.subscribe((loadingStatus) => {
+      this.loading = loadingStatus;
+    });
   }
 
 }

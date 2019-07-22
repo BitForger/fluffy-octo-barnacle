@@ -3,6 +3,7 @@ import { HomeService }                  from '../../../services/home/home.servic
 import { Apollo }                       from 'apollo-angular';
 import gql                              from 'graphql-tag';
 import { IGithubUserResponse }          from '../../../interfaces/IGithubUser';
+import { HeaderService }                from '../../../services/header/header.service';
 
 @Component({
   selector: 'app-projects',
@@ -12,12 +13,9 @@ import { IGithubUserResponse }          from '../../../interfaces/IGithubUser';
 export class ProjectsComponent implements OnInit, OnDestroy {
 
   public loading = true;
-
   public pinnedRepos;
   public repos;
-
   private query;
-
   public imageLangHash = {
     typescript: '/assets/images/typescript.png',
     rails: '/assets/images/rails-logo.png',
@@ -31,9 +29,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     php: '/assets/images/php-logo.png',
   };
 
-  constructor(private hs: HomeService, private apollo: Apollo) { this.hs.toggle(true); }
+  constructor(private hs: HomeService, private apollo: Apollo, private headerService: HeaderService) { this.hs.toggle(true); }
 
   ngOnInit() {
+    this.headerService.updateIsLoading(this.loading);
     this.query = this.apollo.watchQuery<IGithubUserResponse>({
       query: gql`
       query {
@@ -74,6 +73,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       `
     }).valueChanges
       .subscribe(({data, loading}) => {
+        this.headerService.updateIsLoading(loading);
         this.loading = loading;
         const pinnedRepoIds = data.user.pinnedRepositories.nodes.map(repo => repo.id);
         const pinnedRepoLength = data.user.pinnedRepositories.nodes.length;
