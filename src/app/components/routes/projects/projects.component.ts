@@ -66,6 +66,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
                   name
                 }
               }
+              repositoryTopics(first: 10) {
+                nodes {
+                  topic {
+                    name
+                  }
+                }
+              }
+              isFork
+              isArchived
             }
           }
         }
@@ -85,6 +94,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         ];
         this.repos = data.user.repositories.nodes;
         this.repos = this.repos.filter(r => !pinnedRepoIds.includes(r.id));
+        this.repos = this.repos.filter(r => !r.isArchived); // Filter out archived projects
       });
   }
 

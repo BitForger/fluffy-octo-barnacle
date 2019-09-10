@@ -4,9 +4,9 @@
   .content-div(*ngSwitchCase="'div2'", [@visibleHidden]="'visible'")
     h2 You've found my site
   .content-div(*ngSwitchCase="'div3'", [@visibleHidden]="'visible'")
-    h2 It's not much, but I hope you find what you're looking for
+    h2 Forgive this corny intro splash...
   .content-div(*ngSwitchCase="'div4'", [@visibleHidden]="'visible'")
-    h2 My name is Noah Kovacs, and without further ado...
+    h2 I'm just playing some some angular features
 .main-content()
   .main-jumbo(*ngIf="!homeSplashActive")
     .row.background-row
@@ -20,9 +20,13 @@
               mat-card-title
                 h2 Hello
               mat-card-content
-              p This site is a little bit under construction right now but thanks for visiting.
-              p I work on a bunch of different projects ranging from electron based desktop applications to ruby web applications.
-              | I have also been known to work on some Minecraft modding projects in the past. Java Huzzah!
-              hr
-              h2 About Me
-              p I'm a developer based out of America. I have been building websites for the past 5 years for various hobbies and services. I currently work professionally as a web developer and this is the home of my personal projects. I will be linking info to some of my Minecraft mods as well as some of my other web development projects in the future.
+                p This site is a little bit under construction right now but thanks for visiting.
+                p I work on a bunch of different projects ranging from electron based desktop applications to ruby web applications.
+                  | I have also been known to work on some Minecraft modding projects in the past. Java Huzzah!
+                hr
+                h2 About Me
+                p My name is Noah Kovacs and I'm a developer based out of the USA. I have been building websites for the past 5 years for various hobbies and services. I currently work professionally as a web developer and this is the home of my personal projects. I will be linking info to some of my (old) Minecraft mods as well as some of my other web development projects.
+              mat-card-actions
+                a(mat-raised-button, color="primary", routerLink='/projects')
+                  | My Projects&nbsp;
+                  i.fal.fa-arrow-right

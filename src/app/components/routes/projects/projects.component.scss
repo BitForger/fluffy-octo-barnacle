@@ -36,6 +36,8 @@ mat-card {
     a {
       display: block;
       width: 100%;
+      word-break: break-word;
+      white-space: unset;
     }
   }
 
