@@ -15,6 +15,7 @@ import { ProjectsComponent } from './components/routes/projects/projects.compone
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { VideoComponent } from './components/routes/video/video.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AboutComponent,
     ProjectsComponent,
     FooterComponent,
+    VideoComponent,
   ],
   imports     : [
     BrowserModule,
